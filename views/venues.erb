@@ -1,0 +1,26 @@
+<h1> Add a list of your favorite Venues </h1>
+
+
+<% if @venues.any?() %>
+<% @venues.each do |venue| %>
+ <li>
+ <a href="/venues/<%= venue.id() %>"><%= venue.name() %></a>
+ <% end %>
+
+ <% else %>
+
+ <p><em>No venues listed yet</em></p>
+
+
+
+<form action="/venues" method="post">
+
+   <div class="form-group">
+    <label for="venue_name">Venue Name: </label>
+    <input id="venue_name" name="venue_name" class="form-control" type="text" />
+  </div>
+
+<button type="submit" class="btn btn-success">Add Venue</button>
+</form><br />
+
+<a href="/">Return to main page</a>
